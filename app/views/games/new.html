@@ -23,12 +23,37 @@
         <p class="help-block">Copy and paste to import stories into your game.</p>
       </div>
       <div class="form-group">
-        <label for="deck">Choose the set of estimate cards you want to use.</label>
-        <select class="form-control" id="deck" ng-model="newGame.deck" required>
-          <option value="0">0, 1, 2, 4, 8, 16, 32, 64, 128, and ?</option>
-          <option value="1">0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and ?</option>
-        </select>
-      </div>
+          <label for="deck">Choose the set of estimate cards you want to use.</label>
+          <select class="form-control" id="deck" ng-model="newGame.deck" required>
+            <option value="0">0, 1, 2, 4, 8, 16, 32, 64, 128, and ?</option>
+            <option value="1">0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and ?</option>
+          </select>
+        </div>
+        <div class="row card-values-block">
+          <div class="col-sm-12">
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default card-panel">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#cardValues">
+                  <div class="panel-heading-text">Customize cards values</div>
+                </div>
+                <div id="cardValues" class="panel-collapse card-values collapse in">
+                  <div class="panel-body">
+                    <div class="row cards-type">
+                    <div class="col-sm-3" ng-repeat="card in cards" >
+                    <label>
+                      <span>
+                             <input type="checkbox" name="selectedCards[]"
+                                    value="{{card}}" ng-checked="selection.indexOf(card) > -1" ng-click="toggleSelection(card)">
+                      </span>
+                      <span class="custom-checkbox-span">{{card}}</span>
+                    </label>
+                  </div>
+                </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
       <button type="submit" class="btn btn-success" ng-disabled="form.$invalid">Create game</button>
        or <a href="#">Cancel</a>
     </form>

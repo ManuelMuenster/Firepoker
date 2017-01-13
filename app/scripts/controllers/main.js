@@ -19,6 +19,7 @@ angular.module('firePokerApp')
     /*global Firebase*/
     var ref = new Firebase(URL);
 
+
     // UUID generator
     // Snippet from: http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
     var s4 = function() {
@@ -124,6 +125,13 @@ angular.module('firePokerApp')
           stories.push(story);
         });
       }
+
+      if($scope.selection.length > 0) {
+        newGame.deck = $scope.selection;
+      } else {
+        newGame.deck = $scope.decks[newGame.deck];
+      }
+
       newGame.stories = stories;
       newGame.status = 'active';
       newGame.created = new Date().getTime();
@@ -262,6 +270,26 @@ angular.module('firePokerApp')
     $scope.revealCards = function() {
       $scope.game.estimate.status = 'reveal';
     };
+
+    // Card deck options
+    $scope.cards =
+      [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, '?', 'Coffee']
+    ;
+
+    $scope.selection = [];
+
+    $scope.toggleSelection = function toggleSelection(card) {
+      var idx = $scope.selection.indexOf(card);
+
+      if (idx > -1) {
+        $scope.selection.splice(idx, 1);
+      }
+
+      else {
+        $scope.selection.push(card);
+      }
+    };
+
 
     // Card deck options
     $scope.decks = [

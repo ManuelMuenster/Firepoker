@@ -37,7 +37,7 @@
       <!-- Card deck -->
       <div ng-show="showCardDeck" class="well well-sm">
         <ul class="list-inline">
-          <li ng-repeat="card in decks[game.deck]"><a class="btn btn-default" href="" ng-click="estimate(card)">{{card}}</a></li>
+          <li ng-repeat="card in game.deck"><a class="btn btn-default" href="" ng-click="estimate(card)">{{card}}</a></li>
         </ul>
       </div>
       <!-- Select an estimate -->

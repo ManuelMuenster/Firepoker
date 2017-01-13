@@ -26,6 +26,17 @@ body {
   margin-bottom: 0;
 }
 
+
+.col-sm-3 {
+  width: 25%;
+}
+
+
+.panel.panel-default.card-panel {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .bordered {
   position: relative;
   padding: 15px 15px 15px;
@@ -40,20 +51,25 @@ body {
   box-shadow: none;
 }
 
+label .custom-checkbox-span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
 .card {
-  width: 80px;
+  width: auto;
   height: 110px;
+  display:inline-block;
   color: #333;
   background-color: #fff;
   border-color: #adadad;
   font-size:200%;
   text-align: center;
-  white-space: nowrap;
   vertical-align: bottom;
   border: 1px solid;
   border-radius: 4px;
-  padding-top:30px;
   margin:10px;
+  padding: 30px;
 }
 
 .card-facedown {
