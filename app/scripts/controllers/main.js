@@ -273,7 +273,7 @@ angular.module('firePokerApp')
 
     // Card deck options
     $scope.cards =
-      [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, '?', 'Coffee']
+      [0, 0.5, 1, 2, 3, 4, 5, 8, 13, 16, 20, 32, 40, 64, 128, 100, 128, '?', 'Coffee']
     ;
 
     $scope.selection = [];
